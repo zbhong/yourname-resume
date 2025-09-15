@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈若男 - 活动策划师</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111111',
+                        secondary: '#6E6E73',
+                        accent: '#0071E3',
+                        light: '#F5F5F7',
+                        dark: '#1D1D1F',
+                        'neutral-100': '#F8F8F8',
+                        'neutral-200': '#E8E8ED',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .text-shadow {
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 苹果风格的滚动条 */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #86868B;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5E5E62;
+        }
+        
+        /* 轮播动画 */
+        .carousel-slide {
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        /* 导航栏滚动效果 */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 渐变文字 */
+        .gradient-text {
+            background: linear-gradient(90deg, #0066CC, #0071E3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* 卡片悬停效果 */
+        .card-hover {
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* 图片悬停放大效果 */
+        .img-hover-zoom {
+            overflow: hidden;
+        }
+        
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 自定义图标样式 */
+        .custom-icon {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        /* 平滑显示元素 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-primary antialiased">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 md:px-8">
+            <nav class="flex items-center justify-between">
+                <a href="#hero" class="text-xl font-semibold tracking-tight flex items-center">
+                    <span class="w-8 h-8 bg-accent text-white rounded-md flex items-center justify-center mr-2">
+                        <i class="fa fa-star-o"></i>
+                    </span>
+                    陈若男
+                </a>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-secondary hover:text-primary transition-colors">关于</a>
+                    <a href="#experience" class="text-secondary hover:text-primary transition-colors">经历</a>
+                    <a href="#skills" class="text-secondary hover:text-primary transition-colors">技能</a>
+                    <a href="#portfolio" class="text-secondary hover:text-primary transition-colors">作品集</a>
+                    <a href="#certificates" class="text-secondary hover:text-primary transition-colors">证书</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">联系</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#about" class="text-secondary hover:text-primary transition-colors">关于</a>
+                    <a href="#experience" class="text-secondary hover:text-primary transition-colors">经历</a>
+                    <a href="#skills" class="text-secondary hover:text-primary transition-colors">技能</a>
+                    <a href="#portfolio" class="text-secondary hover:text-primary transition-colors">作品集</a>
+                    <a href="#certificates" class="text-secondary hover:text-primary transition-colors">证书</a>
+                    <a href="#contact" class="text-secondary hover:text-primary transition-colors">联系</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section id="hero" class="pt-32 pb-24 md:pt-40 md:pb-36 px-4 bg-gradient-to-b from-neutral-100 to-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">陈若男</h1>
+                <p class="text-xl md:text-2xl text-secondary mb-10 max-w-2xl mx-auto text-balance">
+                    专注快消/零售/餐饮行业的活动策划专家
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="#portfolio" class="px-8 py-3 bg-accent text-white rounded-md hover:bg-opacity-90 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+                        查看作品集
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border border-gray-300 text-primary rounded-md hover:bg-neutral-100 transition-colors shadow-sm hover:shadow transform hover:-translate-y-0.5 transition-all">
+                        联系我
+                    </a>
+                </div>
+                
+                <!-- 滚动指示器 -->
+                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+                    <a href="#about" class="text-secondary hover:text-primary transition-colors">
+                        <i class="fa fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">关于我</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 fade-in">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        我是一名拥有3年活动策划经验的专业人士，专注于快消、零售和餐饮行业。擅长整合营销活动、快闪活动和大型节点活动的全流程策划与落地。
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        我毕业于福建理工大学电子商务专业，在校期间就展现出优秀的活动组织能力，曾带队获得省级竞赛一等奖，并带领团支部获得"五四红旗团支部"等荣誉。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        我注重数据驱动的活动策划，善于通过精准的数据分析优化活动效果，曾推动6个月内线上团购GMV从50万提升至125万，增长150%。
+                    </p>
+                    
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </span>
+                            <span>创新思维</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                                <i class="fa fa-line-chart"></i>
+                            </span>
+                            <span>数据驱动</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                                <i class="fa fa-users"></i>
+                            </span>
+                            <span>资源整合</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center fade-in">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden border border-neutral-200 shadow-xl">
+                        <img src="https://picsum.photos/id/64/400/400" alt="陈若男的照片" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                <div class="text-center p-6 card-hover bg-neutral-100 rounded-xl fade-in">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">省级奖项</h3>
+                    <p class="text-secondary">2项</p>
+                </div>
+                <div class="text-center p-6 card-hover bg-neutral-100 rounded-xl fade-in">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fa fa-calendar-check-o"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">策划活动</h3>
+                    <p class="text-secondary">30+场</p>
+                </div>
+                <div class="text-center p-6 card-hover bg-neutral-100 rounded-xl fade-in">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fa fa-building"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">工作经历</h3>
+                    <p class="text-secondary">2家企业</p>
+                </div>
+                <div class="text-center p-6 card-hover bg-neutral-100 rounded-xl fade-in">
+                    <div class="text-4xl text-accent mb-4">
+                        <i class="fa fa-handshake-o"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">合作资源</h3>
+                    <p class="text-secondary">300+家</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section id="experience" class="py-20 px-4 bg-neutral-100">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">工作经历</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <!-- 工作经历时间线 -->
+            <div class="relative">
+                <!-- 时间线中轴线 -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 transform md:translate-x-px"></div>
+                
+                <!-- 工作经历1 -->
+                <div class="relative mb-16 fade-in">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-sm rounded-full mb-4">2023.08-2025.08</span>
+                            <h3 class="text-2xl font-bold mb-2">新媒体运营负责人（兼活动策划核心岗）</h3>
+                            <p class="text-secondary text-lg mb-4">福州仓山见酿餐饮有限公司</p>
+                            <p class="text-secondary">聚焦餐饮场景，主导全类型活动策划与落地，联动线上线下资源实现"流量-转化-复购"闭环</p>
+                        </div>
+                        
+                        <!-- 时间点标记 -->
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-accent border-4 border-neutral-100 transform -translate-x-1/2 md:translate-x-0 shadow-sm"></div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:mt-0">
+                            <ul class="space-y-4">
+                                <li class="p-5 bg-white rounded-xl shadow-sm card-hover">
+                                    <h4 class="font-semibold mb-2">快闪活动策划与用户激活</h4>
+                                    <p class="text-secondary">策划"陆冲体验日""周末飞盘局"等8场跨界活动，单场吸引50+人到店，月度粉丝活跃度提升40%，企微私域用户沉淀超1000人。</p>
+                                </li>
+                                <li class="p-5 bg-white rounded-xl shadow-sm card-hover">
+                                    <h4 class="font-semibold mb-2">节点整合营销活动</h4>
+                                    <p class="text-secondary">主导3周年店庆活动，活动期间到店客流量同比提升60%，团购GMV单日突破5万元，核销率稳定在85%以上。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 工作经历2 -->
+                <div class="relative fade-in">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-sm rounded-full mb-4">2022.06-2023.06</span>
+                            <h3 class="text-2xl font-bold mb-2">企划专员</h3>
+                            <p class="text-secondary text-lg mb-4">上海红星美凯龙品牌管理有限公司（福州金山商场）</p>
+                            <p class="text-secondary">负责家居商场大型营销活动的策划协助、执行落地与宣传统筹</p>
+                        </div>
+                        
+                        <!-- 时间点标记 -->
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 rounded-full bg-accent border-4 border-neutral-100 transform -translate-x-1/2 md:translate-x-0 shadow-sm"></div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:mt-0">
+                            <ul class="space-y-4">
+                                <li class="p-5 bg-white rounded-xl shadow-sm card-hover">
+                                    <h4 class="font-semibold mb-2">大型节点活动执行</h4>
+                                    <p class="text-secondary">全年协助统筹12场商场级营销活动，活动期间商场客流量平均提升45%，商户销售额同比增长30%。</p>
+                                </li>
+                                <li class="p-5 bg-white rounded-xl shadow-sm card-hover">
+                                    <h4 class="font-semibold mb-2">活动媒体宣传统筹</h4>
+                                    <p class="text-secondary">负责活动媒体投放全流程，助力"国庆家居狂欢周"总曝光量超500万次，有效客资收集量提升50%。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 教育经历 -->
+            <div class="mt-24 fade-in">
+                <h3 class="text-2xl font-bold text-center mb-12">教育经历</h3>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm max-w-3xl mx-auto">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h4 class="text-xl font-semibold">福建理工大学（原福建工程学院）</h4>
+                            <p class="text-secondary">电子商务本科（专业前10%）</p>
+                        </div>
+                        <span class="mt-2 md:mt-0 px-3 py-1 bg-neutral-100 text-primary text-sm rounded-full">2018.09-2022.06</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 border-l-4 border-accent bg-neutral-100 rounded-r-lg">
+                            <h5 class="font-semibold">活动策划相关实践</h5>
+                            <ul class="list-disc list-inside text-secondary space-y-2 mt-2">
+                                <li>带队筹备"博导前程杯"省级竞赛，获省级一等奖</li>
+                                <li>主导"创新、创意及创业"大赛项目，获省级三等奖</li>
+                                <li>策划"学风建设月""五四主题团日"等10+支部活动，带领支部获评"五四红旗团支部"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="p-4 border-l-4 border-primary bg-neutral-100 rounded-r-lg">
+                            <h5 class="font-semibold">在校职务</h5>
+                            <p class="text-secondary mt-2">团支书、易班编辑部长（负责校园活动宣传内容策划与物料产出）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">专业技能</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 活动策划核心技能 -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                            <i class="fa fa-star"></i>
+                        </span>
+                        活动策划核心技能
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">方案设计</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-neutral-200 rounded-full h-2.5 overflow-hidden">
+                                <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="95%"></div>
+                            </div>
+                            <p class="text-sm text-secondary mt-2">熟练输出活动全案（含主题设定、流程规划、预算拆分、风险预案）</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">物料制作</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-neutral-200 rounded-full h-2.5 overflow-hidden">
+                                <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="85%"></div>
+                            </div>
+                            <p class="text-sm text-secondary mt-2">PS（独立完成活动主视觉、海报、展架设计）、视频剪辑</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">内容宣传</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-neutral-200 rounded-full h-2.5 overflow-hidden">
+                                <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="90%"></div>
+                            </div>
+                            <p class="text-sm text-secondary mt-2">秀米公众号推文/H5排版、Office（活动方案PPT、数据复盘表制作）</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">资源整合</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="w-full bg-neutral-200 rounded-full h-2.5 overflow-hidden">
+                                <div class="bg-accent h-full rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-width="92%"></div>
+                            </div>
+                            <p class="text-sm text-secondary mt-2">整合KOL/KOC资源、商户资源、媒体资源，实现活动效果最大化</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 工具与证书预览 -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                            <i class="fa fa-wrench"></i>
+                        </span>
+                        专业工具
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-12">
+                        <div class="p-5 bg-neutral-100 rounded-xl text-center card-hover">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-white flex items-center justify-center text-accent mb-3 shadow-sm">
+                                <i class="fa fa-photo text-xl"></i>
+                            </div>
+                            <h4 class="font-medium">Photoshop</h4>
+                            <p class="text-sm text-secondary mt-1">熟练</p>
+                        </div>
+                        <div class="p-5 bg-neutral-100 rounded-xl text-center card-hover">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-white flex items-center justify-center text-accent mb-3 shadow-sm">
+                                <i class="fa fa-film text-xl"></i>
+                            </div>
+                            <h4 class="font-medium">视频剪辑</h4>
+                            <p class="text-sm text-secondary mt-1">熟练</p>
+                        </div>
+                        <div class="p-5 bg-neutral-100 rounded-xl text-center card-hover">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-white flex items-center justify-center text-accent mb-3 shadow-sm">
+                                <i class="fa fa-line-chart text-xl"></i>
+                            </div>
+                            <h4 class="font-medium">数据分析</h4>
+                            <p class="text-sm text-secondary mt-1">熟练</p>
+                        </div>
+                        <div class="p-5 bg-neutral-100 rounded-xl text-center card-hover">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-white flex items-center justify-center text-accent mb-3 shadow-sm">
+                                <i class="fa fa-desktop text-xl"></i>
+                            </div>
+                            <h4 class="font-medium">Office</h4>
+                            <p class="text-sm text-secondary mt-1">精通</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6 cursor-pointer card-hover p-4 bg-neutral-100 rounded-xl" onclick="window.location.href='#certificates'">
+                        <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-3 custom-icon">
+                            <i class="fa fa-certificate"></i>
+                        </span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold">查看证书资质</h3>
+                            <p class="text-sm text-secondary">全国计算机二级、英语四级、普通话二甲等</p>
+                        </div>
+                        <i class="fa fa-chevron-right text-accent"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集轮播 -->
+    <section id="portfolio" class="py-20 px-4 bg-neutral-100">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">作品集</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-secondary mt-4 max-w-2xl mx-auto">精选活动策划案例展示，涵盖快闪活动、店庆活动、节日营销等多种类型</p>
+            </div>
+            
+            <!-- 轮播容器 -->
+            <div class="relative overflow-hidden fade-in">
+                <div id="carousel" class="flex transition-transform duration-500 ease-out">
+                    <!-- 作品1 -->
+                    <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
+                            <div class="img-hover-zoom">
+                                <img src="https://picsum.photos/id/26/600/400" alt="3周年店庆活动" class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">3周年店庆活动</h3>
+                                <p class="text-secondary mb-4">福州仓山见酿餐饮有限公司</p>
+                                <p class="text-sm mb-4">主题"酿见三载，食力宠粉"，活动期间到店客流量同比提升60%，团购GMV单日突破5万元。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">店庆活动</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">餐饮</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">全渠道营销</span>
+                                </div>
+                                
+                                <!-- 作品图片预留位置 -->
+                                <div class="mt-6 pt-6 border-t border-neutral-100">
+                                    <h4 class="font-medium mb-3">活动图片</h4>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/26/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/27/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/28/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品2 -->
+                    <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
+                            <div class="img-hover-zoom">
+                                <img src="https://picsum.photos/id/42/600/400" alt="陆冲体验日快闪活动" class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">陆冲体验日快闪活动</h3>
+                                <p class="text-secondary mb-4">福州仓山见酿餐饮有限公司</p>
+                                <p class="text-sm mb-4">跨界联动本地运动社群，吸引50+人到店参与，企微私域用户沉淀超300人。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">快闪活动</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">跨界合作</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">用户激活</span>
+                                </div>
+                                
+                                <!-- 作品图片预留位置 -->
+                                <div class="mt-6 pt-6 border-t border-neutral-100">
+                                    <h4 class="font-medium mb-3">活动图片</h4>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/42/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/43/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/44/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品3 -->
+                    <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
+                            <div class="img-hover-zoom">
+                                <img src="https://picsum.photos/id/48/600/400" alt="315家装节" class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">315家装节</h3>
+                                <p class="text-secondary mb-4">红星美凯龙福州金山商场</p>
+                                <p class="text-sm mb-4">获评区域优秀活动案例，活动期间商场客流量提升45%，商户销售额同比增长30%。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">节点营销</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">家居行业</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">大型活动</span>
+                                </div>
+                                
+                                <!-- 作品图片预留位置 -->
+                                <div class="mt-6 pt-6 border-t border-neutral-100">
+                                    <h4 class="font-medium mb-3">活动图片</h4>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/48/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/49/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/50/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品4 -->
+                    <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
+                            <div class="img-hover-zoom">
+                                <img src="https://picsum.photos/id/28/600/400" alt="中秋团圆宴活动" class="w-full h-64 object-cover">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">中秋团圆宴活动</h3>
+                                <p class="text-secondary mb-4">福州仓山见酿餐饮有限公司</p>
+                                <p class="text-sm mb-4">通过"KOL探店+平台流量倾斜"组合宣传，活动套餐销量占比达总销售额35%。</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">节日营销</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">餐饮</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">KOL合作</span>
+                                </div>
+                                
+                                <!-- 作品图片预留位置 -->
+                                <div class="mt-6 pt-6 border-t border-neutral-100">
+                                    <h4 class="font-medium mb-3">活动图片</h4>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/28/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/29/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img src="https://picsum.photos/id/30/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 轮播控制按钮 -->
+                <button id="prev-btn" class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center focus:outline-none hover:bg-neutral-100 transition-colors">
+                    <i class="fa fa-chevron-left text-primary"></i>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center focus:outline-none hover:bg-neutral-100 transition-colors">
+                    <i class="fa fa-chevron-right text-primary"></i>
+                </button>
+            </div>
+            
+            <!-- 轮播指示器 -->
+            <div class="flex justify-center mt-8 space-x-2">
+                <button class="carousel-dot w-3 h-3 rounded-full bg-accent" data-index="0"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 证书展示区 -->
+    <section id="certificates" class="py-20 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">证书资质</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-secondary mt-4 max-w-2xl mx-auto">专业能力与资质证明</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 证书1 -->
+                <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
+                    <div class="p-1 bg-white">
+                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
+                            <!-- 证书图片预留位置 -->
+                            <img src="https://picsum.photos/id/20/600/450" alt="全国计算机二级证书" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">全国计算机二级</h3>
+                        <p class="text-secondary">熟练操作Office，支撑活动方案与数据报表制作</p>
+                        <div class="mt-4 pt-4 border-t border-neutral-200">
+                            <span class="text-sm text-secondary">颁发日期: 2021年3月</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 证书2 -->
+                <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
+                    <div class="p-1 bg-white">
+                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
+                            <!-- 证书图片预留位置 -->
+                            <img src="https://picsum.photos/id/21/600/450" alt="英语四级证书" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">英语四级</h3>
+                        <p class="text-secondary">可阅读行业活动案例英文资料</p>
+                        <div class="mt-4 pt-4 border-t border-neutral-200">
+                            <span class="text-sm text-secondary">颁发日期: 2020年12月</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 证书3 -->
+                <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
+                    <div class="p-1 bg-white">
+                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
+                            <!-- 证书图片预留位置 -->
+                            <img src="https://picsum.photos/id/22/600/450" alt="普通话二甲证书" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">普通话二甲</h3>
+                        <p class="text-secondary">适配活动现场主持、商户/用户沟通场景</p>
+                        <div class="mt-4 pt-4 border-t border-neutral-200">
+                            <span class="text-sm text-secondary">颁发日期: 2021年6月</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 奖项展示 -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-10">获奖经历</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- 奖项1 -->
+                    <div class="flex bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover p-6 fade-in">
+                        <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-6 flex-shrink-0">
+                            <i class="fa fa-trophy text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">"博导前程杯"省级竞赛一等奖</h4>
+                            <p class="text-secondary mb-3">带队筹备竞赛，负责参赛方案策划、团队分工统筹及答辩环节把控</p>
+                            <span class="text-sm text-secondary">2020年11月</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 奖项2 -->
+                    <div class="flex bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover p-6 fade-in">
+                        <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-6 flex-shrink-0">
+                            <i class="fa fa-medal text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">"创新、创意及创业"大赛省级三等奖</h4>
+                            <p class="text-secondary mb-3">主导项目从商业逻辑梳理到展示方案设计的全流程推进</p>
+                            <span class="text-sm text-secondary">2021年5月</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section id="contact" class="py-20 px-4 bg-neutral-100">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">联系我</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-secondary mt-4 max-w-2xl mx-auto">如果您对我的活动策划经验感兴趣，或者有合适的职位机会，欢迎随时联系我</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent mr-4 flex-shrink-0 shadow-sm">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1">电话</h3>
+                                <p class="text-secondary">15985780908</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent mr-4 flex-shrink-0 shadow-sm">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1">邮箱</h3>
+                                <p class="text-secondary">chenruonan2000@163.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent mr-4 flex-shrink-0 shadow-sm">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-1">籍贯</h3>
+                                <p class="text-secondary">福建三明</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold mb-6">社交媒体</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors shadow-sm">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors shadow-sm">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors shadow-sm">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors shadow-sm">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6">发送消息</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium mb-2">姓名</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors" placeholder="您的姓名">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-medium mb-2">邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors" placeholder="您的邮箱">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium mb-2">消息</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors" placeholder="请输入您想对我说的话"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 bg-accent text-white rounded-md hover:bg-opacity-90 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 flex items-center">
+                    <span class="w-8 h-8 bg-accent text-white rounded-md flex items-center justify-center mr-2">
+                        <i class="fa fa-star-o"></i>
+                    </span>
+                    <h3 class="text-xl font-semibold">陈若男</h3>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    <p>&copy; 2025 陈若男. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // 关闭移动菜单当点击菜单项
+        const mobileMenuItems = mobileMenu.querySelectorAll('a');
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // 作品集轮播
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        let currentIndex = 0;
+        let slidesToShow = 1;
+        
+        // 根据屏幕尺寸确定显示的幻灯片数量
+        function updateSlidesToShow() {
+            if (window.innerWidth >= 1024) {
+                slidesToShow = 3;
+            } else if (window.innerWidth >= 768) {
+                slidesToShow = 2;
+            } else {
+                slidesToShow = 1;
+            }
+            updateCarousel();
+        }
+        
+        // 初始化和窗口大小改变时更新
+        updateSlidesToShow();
+        window.addEventListener('resize', updateSlidesToShow);
+        
+        // 更新轮播位置
+        function updateCarousel() {
+            const slideWidth = 100 / slidesToShow;
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            
+            // 更新指示器
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('bg-accent');
+                    dot.classList.remove('bg-gray-300');
+                } else {
+                    dot.classList.remove('bg-accent');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        // 下一张幻灯片
+        function nextSlide() {
+            if (currentIndex < slides.length - slidesToShow) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+        
+        // 上一张幻灯片
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - slidesToShow;
+            }
+            updateCarousel();
+        }
+        
+        // 点击指示器切换幻灯片
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+        
+        // 按钮事件监听
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // 自动轮播
+        let autoplayInterval = setInterval(nextSlide, 5000);
+        
+        // 鼠标悬停时暂停自动轮播
+        carousel.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        // 鼠标离开时恢复自动轮播
+        carousel.parentElement.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 滚动显示动画
+        function checkFadeElements() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // 技能条动画
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('[data-width]');
+            
+            skillBars.forEach(bar => {
+                const barTop = bar.getBoundingClientRect().top;
+                const barVisible = 150;
+                
+                if (barTop < window.innerHeight - barVisible && bar.style.width === '0%') {
+                    setTimeout(() => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    }, 300);
+                }
+            });
+        }
+        
+        // 初始检查和滚动时检查
+        window.addEventListener('scroll', () => {
+            checkFadeElements();
+            animateSkillBars();
+        });
+        
+        // 页面加载时检查
+        window.addEventListener('load', () => {
+            checkFadeElements();
+            animateSkillBars();
+        });
+    </script>
+</body>
+</html>
+    
