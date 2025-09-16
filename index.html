@@ -150,6 +150,7 @@
                     <a href="#experience" class="text-secondary hover:text-primary transition-colors">经历</a>
                     <a href="#skills" class="text-secondary hover:text-primary transition-colors">技能</a>
                     <a href="#portfolio" class="text-secondary hover:text-primary transition-colors">作品集</a>
+                    <a href="#work-highlights" class="text-secondary hover:text-primary transition-colors">工作亮点</a>
                     <a href="#certificates" class="text-secondary hover:text-primary transition-colors">证书</a>
                     <a href="#contact" class="text-secondary hover:text-primary transition-colors">联系</a>
                 </div>
@@ -167,6 +168,7 @@
                     <a href="#experience" class="text-secondary hover:text-primary transition-colors">经历</a>
                     <a href="#skills" class="text-secondary hover:text-primary transition-colors">技能</a>
                     <a href="#portfolio" class="text-secondary hover:text-primary transition-colors">作品集</a>
+                    <a href="#work-highlights" class="text-secondary hover:text-primary transition-colors">工作亮点</a>
                     <a href="#certificates" class="text-secondary hover:text-primary transition-colors">证书</a>
                     <a href="#contact" class="text-secondary hover:text-primary transition-colors">联系</a>
                 </div>
@@ -244,7 +246,10 @@
                 </div>
                 <div class="order-1 md:order-2 flex justify-center fade-in">
                     <div class="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden border border-neutral-200 shadow-xl">
-                        <img src="https://picsum.photos/id/64/400/400" alt="陈若男的照片" class="w-full h-full object-cover">
+                        <!-- 个人照片 - 可通过管理系统替换 -->
+                        <img id="aboutImage" src="./简历照.png" 
+                             alt="陈若男的照片" 
+                             onerror="this.src='https://picsum.photos/id/64/400/400'">
                     </div>
                 </div>
             </div>
@@ -521,7 +526,13 @@
                     <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
                         <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
                             <div class="img-hover-zoom">
-                                <img src="https://picsum.photos/id/26/600/400" alt="3周年店庆活动" class="w-full h-64 object-cover">
+                                <!-- 作品图片1 - 可通过管理系统替换 -->
+                                <a href="./自助周年庆60×90-0514.jpg" target="_blank" rel="noopener noreferrer">
+                                    <img src="./自助周年庆60×90-0514.jpg" 
+                                         alt="3周年店庆活动" 
+                                         class="w-full h-64 object-cover cursor-pointer"
+                                         onerror="this.src='https://picsum.photos/id/26/600/400'">
+                                </a>
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">3周年店庆活动</h3>
@@ -538,13 +549,13 @@
                                     <h4 class="font-medium mb-3">活动图片</h4>
                                     <div class="grid grid-cols-3 gap-2">
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/26/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                            <img src="./14.jpg" alt="活动现场图片1" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/26/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/27/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                            <img src="./15.jpg" alt="活动现场图片2" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/27/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/28/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                            <img src="./微信图片_202404161315013.jpg" alt="活动现场图片3" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/28/200/200'">
                                         </div>
                                     </div>
                                 </div>
@@ -556,7 +567,11 @@
                     <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
                         <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
                             <div class="img-hover-zoom">
-                                <img src="https://picsum.photos/id/42/600/400" alt="陆冲体验日快闪活动" class="w-full h-64 object-cover">
+                                <!-- 作品图片2 - 可通过管理系统替换 -->
+                                <img src="http://localhost:3001/uploads/portfolio2.jpg" 
+                                     alt="陆冲体验日快闪活动" 
+                                     class="w-full h-64 object-cover"
+                                     onerror="this.src='https://picsum.photos/id/42/600/400'">
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">陆冲体验日快闪活动</h3>
@@ -573,13 +588,13 @@
                                     <h4 class="font-medium mb-3">活动图片</h4>
                                     <div class="grid grid-cols-3 gap-2">
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/42/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio2-1.jpg" alt="活动现场图片1" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/42/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/43/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio2-2.jpg" alt="活动现场图片2" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/43/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/44/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio2-3.jpg" alt="活动现场图片3" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/44/200/200'">
                                         </div>
                                     </div>
                                 </div>
@@ -591,7 +606,11 @@
                     <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
                         <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
                             <div class="img-hover-zoom">
-                                <img src="https://picsum.photos/id/48/600/400" alt="315家装节" class="w-full h-64 object-cover">
+                                <!-- 作品图片3 - 可通过管理系统替换 -->
+                                <img src="http://localhost:3001/uploads/portfolio3.jpg" 
+                                     alt="315家装节" 
+                                     class="w-full h-64 object-cover"
+                                     onerror="this.src='https://picsum.photos/id/48/600/400'">
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">315家装节</h3>
@@ -602,19 +621,19 @@
                                     <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">家居行业</span>
                                     <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">大型活动</span>
                                 </div>
-                                
+                                 
                                 <!-- 作品图片预留位置 -->
                                 <div class="mt-6 pt-6 border-t border-neutral-100">
                                     <h4 class="font-medium mb-3">活动图片</h4>
                                     <div class="grid grid-cols-3 gap-2">
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/48/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio3-1.jpg" alt="活动现场图片1" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/48/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/49/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio3-2.jpg" alt="活动现场图片2" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/49/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/50/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                            <img src="http://localhost:3001/uploads/portfolio3-3.jpg" alt="活动现场图片3" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/50/200/200'">
                                         </div>
                                     </div>
                                 </div>
@@ -626,30 +645,34 @@
                     <div class="carousel-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-4">
                         <div class="bg-white rounded-xl overflow-hidden shadow-sm h-full card-hover">
                             <div class="img-hover-zoom">
-                                <img src="https://picsum.photos/id/28/600/400" alt="中秋团圆宴活动" class="w-full h-64 object-cover">
+                                <!-- 作品图片4 - 使用al文件夹中的图片 -->
+                                <img src="./al/微信图片_20250916161711_1_2.jpg" 
+                                     alt="新作品集案例" 
+                                     class="w-full h-64 object-cover"
+                                     onerror="this.src='https://picsum.photos/id/60/600/400'">
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">中秋团圆宴活动</h3>
+                                <h3 class="text-xl font-bold mb-2">营销节点宣传</h3>
                                 <p class="text-secondary mb-4">福州仓山见酿餐饮有限公司</p>
-                                <p class="text-sm mb-4">通过"KOL探店+平台流量倾斜"组合宣传，活动套餐销量占比达总销售额35%。</p>
+                                <p class="text-sm mb-4">全流程策划活动营销主题，部署物料及广告投放，跟进活动落地，活动覆盖线上线下5000+人次，媒体曝光量突破10万+。</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">节日营销</span>
-                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">餐饮</span>
-                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">KOL合作</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">策划活动</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">部署物料</span>
+                                    <span class="px-2 py-1 bg-neutral-100 text-sm rounded-full">媒体传播</span>
                                 </div>
-                                
+                                 
                                 <!-- 作品图片预留位置 -->
                                 <div class="mt-6 pt-6 border-t border-neutral-100">
                                     <h4 class="font-medium mb-3">活动图片</h4>
                                     <div class="grid grid-cols-3 gap-2">
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/28/200/200" alt="活动现场图片1" class="w-full h-full object-cover">
+                                            <img src="./al/微信图片_20250916161712_2_2.jpg" alt="活动现场图片1" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/61/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/29/200/200" alt="活动现场图片2" class="w-full h-full object-cover">
+                                            <img src="./al/微信图片_20250916161713_3_2.jpg" alt="活动现场图片2" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/62/200/200'">
                                         </div>
                                         <div class="aspect-square bg-neutral-100 rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                                            <img src="https://picsum.photos/id/30/200/200" alt="活动现场图片3" class="w-full h-full object-cover">
+                                            <img src="./al/微信图片_20250916161714_5_2.jpg" alt="活动现场图片3" class="w-full h-full object-cover" onerror="this.src='https://picsum.photos/id/63/200/200'">
                                         </div>
                                     </div>
                                 </div>
@@ -676,6 +699,156 @@
             </div>
         </div>
     </section>
+    
+    <!-- 工作亮点区域 -->
+    <section id="work-highlights" class="py-20 px-4 bg-neutral-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">工作亮点</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-secondary mt-4 max-w-2xl mx-auto">专业能力与核心成就展示</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- 活动策划与品牌赋能 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-in">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6">
+                        <i class="fa fa-calendar-check-o text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">活动策划与品牌赋能</h3>
+                    <p class="text-lg font-medium text-primary mb-4">聚焦落地转化，驱动多品牌增长</p>
+                    
+                    <ul class="space-y-4 text-secondary">
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>2022年主导/协同落地多场标杆活动，覆盖大促、品牌开业、行业赛事，包括"618理想生活狂欢季"、"818 FUN肆嗨购节"、"7周年巅峰大促"等</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>直接受益品牌商户超30家（含东芝、松下、喜临门、欧兰特、摩恩、顾家等），2023年315期间服务的摩恩卫浴、索菲亚等品牌获用户直接购买意向反馈</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 内容营销与流量运营 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-in">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6">
+                        <i class="fa fa-line-chart text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">内容营销与流量运营</h3>
+                    <p class="text-lg font-medium text-primary mb-4">多平台破圈，打造高价值内容矩阵</p>
+                    
+                    <ul class="space-y-4 text-secondary">
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>构建"公众号+视频号+抖音+朋友圈"内容体系，公众号产出21条推文累计浏览4443次，视频号浏览20.3万次、抖音11.4万次</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>探索"娱乐化+场景化"内容模式，如东芝冰箱"趣味囤货挑战"、设计师露营主题宣传，通过"宅家购物"等痛点话题提升内容共鸣感</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 媒体投放与效果管控 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-in">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6">
+                        <i class="fa fa-bullhorn text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">媒体投放与效果管控</h3>
+                    <p class="text-lg font-medium text-primary mb-4">精准对接资源，保障投放ROI</p>
+                    
+                    <ul class="space-y-4 text-secondary">
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>负责商场媒体投放计划对接、进度跟进与效果验收，2022-2023年覆盖线下资源及线上DOU+投放，完成5次以上媒体效果验收（验收率80%）</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>同步对接媒体费用请款，从"接收合同材料-审核投放照片-提交请款"全流程规范操作，保障大促活动媒体费用及时结算</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 终端形象与IP创新 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-in">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6">
+                        <i class="fa fa-paint-brush text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">终端形象与IP创新</h3>
+                    <p class="text-lg font-medium text-primary mb-4">夯实基础形象，探索差异化价值</p>
+                    
+                    <ul class="space-y-4 text-secondary">
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>协同团队检查商场物料、价格标签合规性，确保终端形象统一；2023年优化公众号菜单功能，升级为"活动、会员、服务、楼层导视"多模块</span>
+                        </li>
+                        <li class="flex">
+                            <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                            <span>启动"设计师IP打造计划"，设计#设计师探店#等话题，联动室内设计师资源，强化商场"装修+设计+选材一站式服务"定位</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 执行效率与细节把控 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm fade-in md:col-span-2">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-6">
+                        <i class="fa fa-clock-o text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">执行效率与细节把控</h3>
+                    <p class="text-lg font-medium text-primary mb-4">提前履约，保障工作质量</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <ul class="space-y-4 text-secondary">
+                            <li class="flex">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>建立"提前规划"机制——大促活动即时性文案提前3天完成，物料、广播稿文案提前1周完成，2022-2023年累计撰写超百份文案，无交付延误</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-4 text-secondary">
+                            <li class="flex">
+                                <i class="fa fa-check-circle text-accent mt-1 mr-3"></i>
+                                <span>负责活动摄影、广播稿录制审阅与视频剪辑，确保宣传内容"视觉+听觉"双达标；2023年提出"抖音分类运营""内容垂直化"优化方案，提升账号活跃度</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 视频Banner区域 -->
+    <section id="video-banner" class="py-10 px-4 bg-neutral-900">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">活动视频展示</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <!-- 视频播放器 -->
+            <div class="relative w-full aspect-video max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+                <!-- 视频占位符 - 实际视频可后续替换 -->
+                <video 
+                    id="portfolio-video" 
+                    class="w-full h-full object-cover"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                    poster="https://picsum.photos/id/1/1200/675"
+                >
+                    <!-- 此处可放置实际的视频文件，用户后续可替换 -->
+                    <source src="陈若男作品集视频.mp4" type="video/mp4">
+                    您的浏览器不支持HTML5视频播放。
+                </video>
+                
+                <!-- 视频控制覆盖层 -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-70 hover:opacity-90 transition-opacity flex items-end justify-center">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 证书展示区 -->
     <section id="certificates" class="py-20 px-4 bg-white">
@@ -689,12 +862,6 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- 证书1 -->
                 <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
-                    <div class="p-1 bg-white">
-                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
-                            <!-- 证书图片预留位置 -->
-                            <img src="https://picsum.photos/id/20/600/450" alt="全国计算机二级证书" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">全国计算机二级</h3>
                         <p class="text-secondary">熟练操作Office，支撑活动方案与数据报表制作</p>
@@ -706,12 +873,6 @@
                 
                 <!-- 证书2 -->
                 <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
-                    <div class="p-1 bg-white">
-                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
-                            <!-- 证书图片预留位置 -->
-                            <img src="https://picsum.photos/id/21/600/450" alt="英语四级证书" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">英语四级</h3>
                         <p class="text-secondary">可阅读行业活动案例英文资料</p>
@@ -723,12 +884,6 @@
                 
                 <!-- 证书3 -->
                 <div class="bg-neutral-100 rounded-xl overflow-hidden shadow-sm card-hover fade-in">
-                    <div class="p-1 bg-white">
-                        <div class="aspect-[4/3] bg-white p-4 flex items-center justify-center">
-                            <!-- 证书图片预留位置 -->
-                            <img src="https://picsum.photos/id/22/600/450" alt="普通话二甲证书" class="max-h-full max-w-full object-contain">
-                        </div>
-                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">普通话二甲</h3>
                         <p class="text-secondary">适配活动现场主持、商户/用户沟通场景</p>
@@ -964,22 +1119,28 @@
         
         // 下一张幻灯片
         function nextSlide() {
-            if (currentIndex < slides.length - slidesToShow) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
+            // 只有在幻灯片数量大于要显示的数量时才允许滑动
+            if (slides.length > slidesToShow) {
+                if (currentIndex < slides.length - slidesToShow) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
             }
-            updateCarousel();
         }
         
         // 上一张幻灯片
         function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = slides.length - slidesToShow;
+            // 只有在幻灯片数量大于要显示的数量时才允许滑动
+            if (slides.length > slidesToShow) {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = slides.length - slidesToShow;
+                }
+                updateCarousel();
             }
-            updateCarousel();
         }
         
         // 点击指示器切换幻灯片
@@ -1064,6 +1225,67 @@
         window.addEventListener('load', () => {
             checkFadeElements();
             animateSkillBars();
+        });
+
+        // 图片放大弹窗功能
+        // 创建弹窗元素
+        const modalHTML = `
+            <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center p-4">
+                <button id="close-modal" class="absolute top-6 right-6 text-white text-3xl hover:text-gray-300 transition-colors duration-300">
+                    ×
+                </button>
+                <div class="modal-content max-w-6xl max-h-[90vh]">
+                    <img id="modal-image" src="" alt="放大图片" class="max-w-full max-h-[90vh] object-contain">
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // 获取弹窗元素
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        // 为作品集里的所有图片添加点击事件
+        const portfolioImages = document.querySelectorAll('#portfolio .carousel-item img');
+        portfolioImages.forEach(img => {
+            img.style.cursor = 'pointer'; // 鼠标指针变为手型
+            img.addEventListener('click', function() {
+                // 获取原图URL（去除可能的尺寸参数）
+                let imgSrc = this.src;
+                
+                // 显示弹窗
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                modalImage.src = imgSrc;
+                
+                // 阻止页面滚动
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // 关闭弹窗函数
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // 点击关闭按钮关闭弹窗
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // 点击弹窗背景关闭弹窗
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 按ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
         });
     </script>
 </body>
